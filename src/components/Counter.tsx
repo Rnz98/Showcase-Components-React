@@ -1,6 +1,7 @@
 import "../styles/counter.css";
 import { useState } from "react";
 import type { MouseEvent } from "react";
+import { Link } from "react-router-dom";
 
 const Counter = () => {
   const [count, setCount] = useState<number>(0);
@@ -25,7 +26,11 @@ const Counter = () => {
       <div className="counter">
         <div className="counter-container">
           <div className="counter-header">
-            <h2 className="counter-title">Counter</h2>
+            <div className="header-top">
+              <h2 className="counter-title">Counter</h2>
+              <Link to="/" className="back-button">← Back</Link>
+            </div>
+            
             <p className="counter-description">
               Componente interactivo que permite modificar un valor numérico
               mediante botones de incremento, decremento, incremento rápido

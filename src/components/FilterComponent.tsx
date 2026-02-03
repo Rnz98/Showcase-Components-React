@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import type { ChangeEvent } from "react";
 import "../styles/Filter-component.css";
 import pokemons from "../data/pokemons.json";
+import { Link } from "react-router-dom";
 
 const FilterComponent = () => {
   type Pokemon = {
@@ -41,7 +42,10 @@ const FilterComponent = () => {
     <div className="filter">
       <div className="filter-container">
         <div className="filter-header">
-          <h2>Filter</h2>
+          <div className="header-top">
+            <h2>Filter</h2>
+            <Link to="/" className="back-button">← Back</Link>
+          </div>
           <p>
             Descripción: Este componente filtra Pokémones por tipo desde el
             archivo JSON.
