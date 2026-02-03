@@ -1,8 +1,21 @@
-import pokemons from "../data/pokemons.json";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function App() {
-  console.log(pokemons);
-  return <h1>Happy Coding 🚀</h1>;
+import Home from "./Home";
+import Counter from "./Counter";
+import FilterComponent from "./FilterComponent";
+import ShoppingCart from "./Shopping-cart";
+
+function App(){
+  return(
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/counter" element={<Counter/>}/>
+      <Route path="/pokemon" element={<FilterComponent/>}/>
+      <Route path="/shop" element={<ShoppingCart/>}/>
+    </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;

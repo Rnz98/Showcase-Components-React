@@ -1,5 +1,6 @@
 import { useCart } from "../logic/cart";
 import "../styles/Shopping-cart.css";
+import { Link } from "react-router-dom";
 
 const ShoppingCart = () => {
   const { products, cart, cartItems, increase, decrease, total } = useCart();
@@ -9,7 +10,10 @@ const ShoppingCart = () => {
       <div className="shoopingCart">
         <div className="shoopingCart-container">
           <div className="shoopingCart-header">
-            <h2>Shopping Cart</h2>
+            <div className="header-top">
+              <h2>Shopping Cart</h2>
+              <Link to="/" className="back-button">← Back</Link>
+            </div>
             <p>
               Componente encargado de gestionar y visualizar el proceso de
               compra del usuario. Muestra una lista de productos disponibles,
