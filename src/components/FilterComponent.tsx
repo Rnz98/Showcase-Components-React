@@ -3,6 +3,7 @@ import type { ChangeEvent } from "react";
 import "../styles/Filter-component.css";
 import pokemons from "../data/pokemons.json";
 import { Link } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext";
 
 const FilterComponent = () => {
   type Pokemon = {
@@ -12,6 +13,7 @@ const FilterComponent = () => {
     image_url: string;
   };
 
+  const { theme, toggleTheme } = useTheme();
   const [selectedType, setSelectedType] = useState<string>("all");
   const [types, setTypes] = useState<string[]>([]);
   const [filtrarPokemons, setFiltrarPokemons] = useState<Pokemon[]>(pokemons);
@@ -44,7 +46,12 @@ const FilterComponent = () => {
         <div className="filter-header">
           <div className="header-top">
             <h2>Filter</h2>
-            <Link to="/" className="back-button">← Back</Link>
+            <div className="header-actions">
+              <button className="theme-toggle" onClick={toggleTheme}>
+                {theme === "light" ? "🌙" : "☀️"}
+              </button>
+              <Link to="/" className="back-button">← Back</Link>
+            </div>
           </div>
           <p>
             Descripción: Este componente filtra Pokémones por tipo desde el

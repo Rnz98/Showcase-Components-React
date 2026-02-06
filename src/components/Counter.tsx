@@ -2,8 +2,10 @@ import "../styles/counter.css";
 import { useState } from "react";
 import type { MouseEvent } from "react";
 import { Link } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext";
 
 const Counter = () => {
+  const { theme, toggleTheme } = useTheme();
   const [count, setCount] = useState<number>(0);
 
   const handleincremet = (_event: MouseEvent<HTMLButtonElement>): void =>
@@ -28,7 +30,12 @@ const Counter = () => {
           <div className="counter-header">
             <div className="header-top">
               <h2 className="counter-title">Counter</h2>
-              <Link to="/" className="back-button">← Back</Link>
+              <div className="header-actions">
+                <button className="theme-toggle" onClick={toggleTheme}>
+                  {theme === "light" ? "🌙" : "☀️"}
+                </button>
+                <Link to="/" className="back-button">← Back</Link>
+              </div>
             </div>
             
             <p className="counter-description">

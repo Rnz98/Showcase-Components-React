@@ -1,5 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
 
+:root {
+  --bg-primary: hsl(0, 0%, 100%);
+  --bg-secondary: hsl(0, 0%, 98%);
+  --bg-tertiary: hsl(0, 0%, 96%);
+  --bg-card: hsl(0, 0%, 100%);
+  --text-primary: hsl(0, 0%, 9%);
+  --text-secondary: hsl(0, 0%, 32%);
+  --text-muted: #171717;
+  --border-color: hsl(0, 0%, 83%);
+  --border-card: hsl(0, 0%, 32%);
+  --btn-bg: hsl(0, 0%, 90%);
+  --btn-bg-hover: hsl(0, 0%, 80%);
+  --btn-text: hsl(0, 0%, 15%);
+  --accent: hsl(263, 70%, 50%);
+  --accent-light: hsl(251, 91%, 95%);
+  --accent-disabled: hsl(263, 100%, 69%);
+  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow-hover: rgba(0, 0, 0, 0.15);
+  --shadow-strong: rgba(0, 0, 0, 0.25);
+  --active-border: #7c3aed;
+  --input-border: hsl(0, 0%, 96%);
+}
+
+[data-theme="dark"] {
+  --bg-primary: hsl(0, 0%, 10%);
+  --bg-secondary: hsl(0, 0%, 14%);
+  --bg-tertiary: hsl(0, 0%, 18%);
+  --bg-card: hsl(0, 0%, 16%);
+  --text-primary: hsl(0, 0%, 92%);
+  --text-secondary: hsl(0, 0%, 70%);
+  --text-muted: hsl(0, 0%, 85%);
+  --border-color: hsl(0, 0%, 30%);
+  --border-card: hsl(0, 0%, 40%);
+  --btn-bg: hsl(0, 0%, 25%);
+  --btn-bg-hover: hsl(0, 0%, 35%);
+  --btn-text: hsl(0, 0%, 90%);
+  --accent: hsl(263, 70%, 60%);
+  --accent-light: hsl(251, 40%, 25%);
+  --accent-disabled: hsl(263, 50%, 40%);
+  --shadow: rgba(0, 0, 0, 0.3);
+  --shadow-hover: rgba(0, 0, 0, 0.4);
+  --shadow-strong: rgba(0, 0, 0, 0.5);
+  --active-border: hsl(263, 70%, 60%);
+  --input-border: hsl(0, 0%, 30%);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,9 +55,9 @@
 html, body {
   height: 100%;
   font-family: 'Inter', sans-serif;
-  /* display: flex;
-  flex-direction: column; */
-  /* align-items: center; */
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 ul, ol {
@@ -43,17 +89,39 @@ button {
   margin-bottom: 8px;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .back-button {
   display: inline-block;
   padding: 8px 16px;
   border-radius: 6px;
-  background-color: hsl(0, 0%, 90%);
+  background-color: var(--btn-bg);
   font-weight: 500;
   font-size: 14px;
-  color: hsl(0, 0%, 15%);
+  color: var(--btn-text);
   transition: background-color 0.2s;
 }
 
 .back-button:hover {
-  background-color: hsl(0, 0%, 80%);
+  background-color: var(--btn-bg-hover);
+}
+
+.theme-toggle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--btn-bg);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.theme-toggle:hover {
+  background-color: var(--btn-bg-hover);
 }
