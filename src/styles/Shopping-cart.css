@@ -4,11 +4,11 @@
   align-items: center;
   margin-top: 0;
   width: 100%;
- 
-  background-color: hsl(0, 0%, 98%);
+  background-color: var(--bg-secondary);
+  transition: background-color 0.3s;
 }
 .shoopingCart {
-  width: 920px;  
+  width: 920px;
   padding-top: 48px;
   padding-bottom: 48px;
 }
@@ -27,7 +27,7 @@
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
-  color: hsl(0, 0%, 9%);
+  color: var(--text-primary);
   margin-bottom: 8px;
 }
 
@@ -35,7 +35,7 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 2rem;
-  color: hsl(0, 0%, 9%);
+  color: var(--text-primary);
   margin-bottom: 2rem;
 }
 
@@ -53,14 +53,15 @@
   width: 588px;
   height: 1032px;
   padding: 16px 8px;
-  background-color: hsl(0, 0%, 100%);
+  background-color: var(--bg-card);
+  transition: background-color 0.3s;
 }
 
 .list-products h2 {
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
-  color: hsl(0, 0%, 9%);
+  color: var(--text-primary);
   margin-bottom: 32px;
 }
 
@@ -71,7 +72,8 @@
   height: 1032px;
   padding: 16px;
   gap: 32px;
-  background-color: hsl(0, 0%, 96%);
+  background-color: var(--bg-tertiary);
+  transition: background-color 0.3s;
 }
 
 .buttonSubmit {
@@ -79,16 +81,17 @@
   height: 40px;
   border-radius: 6px;
   padding: 8px 16px;
-  background-color: hsl(263, 70%, 50%);
+  background-color: var(--accent);
   color: #ffffff;
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
   text-align: center;
+  transition: background-color 0.2s;
 }
 
 .buttonSubmit:disabled {
-  background-color: hsl(263, 100%, 69%);
+  background-color: var(--accent-disabled);
   cursor: not-allowed;
 }
 
@@ -108,14 +111,15 @@
   width: 160px;
   height: 222px;
   border-radius: 8px;
-  border: 1px solid hsl(0, 0%, 32%);
+  border: 1px solid var(--border-card);
   padding: 12px 16px;
   gap: 8px;
-  background-color: hsl(0, 0%, 100%);
+  background-color: var(--bg-card);
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
 .active-border {
-  border: 2px solid #7c3aed;
+  border: 2px solid var(--active-border);
   border-radius: 8px;
 }
 
@@ -129,14 +133,14 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 28px;
-  color: hsl(0, 0%, 9%);
+  color: var(--text-primary);
 }
 
 .productPrice {
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
-  color: hsl(0, 0%, 9%);
+  color: var(--text-primary);
 }
 
 .productAmount {
@@ -150,15 +154,18 @@
   height: 36px;
   border-radius: 6px;
   padding: 8px 12px;
-  background-color: hsl(0, 0%, 90%);
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  transition: background-color 0.2s;
 }
 
 .productAmount span {
   width: 40px;
   height: 36px;
   border-radius: 6px;
-  border: 1px solid hsl(0, 0%, 96%);
+  border: 1px solid var(--input-border);
   padding: 8px 12px;
+  color: var(--text-primary);
 }
 
 .productCategory {
@@ -170,9 +177,11 @@
   border-bottom-left-radius: 8px;
   border-top-right-radius: 8px;
   padding-inline: 8px;
-  background-color: hsl(251, 91%, 95%);
+  background-color: var(--accent-light);
   font-size: 14px;
   font-weight: 400;
+  color: var(--text-primary);
+  transition: background-color 0.3s;
 }
 
 .precio-producto {
@@ -187,19 +196,18 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 28px;
-  color: hsl(0, 0%, 32%);
+  color: var(--text-secondary);
 }
 
 .total{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* margin-top: 20px; */
 }
 
 .total p{
   font-weight: 600;
   font-size: 18px;
   line-height: 32px;
-  color: hsl(0, 0%, 32%);
+  color: var(--text-secondary);
 }

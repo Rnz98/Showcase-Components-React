@@ -1,8 +1,10 @@
 import { useCart } from "../logic/cart";
 import "../styles/Shopping-cart.css";
 import { Link } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext";
 
 const ShoppingCart = () => {
+  const { theme, toggleTheme } = useTheme();
   const { products, cart, cartItems, increase, decrease, total } = useCart();
 
   return (
@@ -12,7 +14,12 @@ const ShoppingCart = () => {
           <div className="shoopingCart-header">
             <div className="header-top">
               <h2>Shopping Cart</h2>
-              <Link to="/" className="back-button">← Back</Link>
+              <div className="header-actions">
+                <button className="theme-toggle" onClick={toggleTheme}>
+                  {theme === "light" ? "🌙" : "☀️"}
+                </button>
+                <Link to="/" className="back-button">← Back</Link>
+              </div>
             </div>
             <p>
               Componente encargado de gestionar y visualizar el proceso de
